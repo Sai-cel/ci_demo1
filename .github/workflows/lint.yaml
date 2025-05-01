@@ -1,25 +1,22 @@
-name: CI demo 
-
-
+name: CI demo
 
 on: push
-
-
 
 jobs:
   lint:
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-  steps:
-       - name: Checkout code
-         uses: actions/checkout@v3
-       - name: Setup Python@v4
-         uses: actions/setup-python
-       - name: Install dependencies
-         run: |
-            python -m pip install --upgrade pip
-            pip install flake8
-       - name: Run flake8
-         run: |
-           flake8 example.py
-     
+      - name: Setup Python@v4
+        uses: actions/setup-python@v4
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8
+
+      - name: Run flake8
+        run: |
+          flake8 example.py
