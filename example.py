@@ -1,7 +1,11 @@
-def add(x, y):
-    a = int(x)
-    b = int(y)
+def greet(name):
+    print(f"Hello {name}")
+
+
+def add(a, b):
     return a + b
 
 
-print(add(3, 4))
+greet("Anil")
+
+print(add(3, 5))
